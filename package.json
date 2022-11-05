@@ -1,0 +1,27 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.20.0",
+    "csv-parser": "3.0.0",
+    "csv-writer": "1.6.0",
+    "discord.js-selfbot-v13": "2.6.12",
+    "express": "4.18.1",
+    "google-spreadsheet": "3.3.0",
+    "googleapis": "107.0.0",
+    "got": "11.8.3",
+    "pug": "3.0.2",
+    "request": "2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.20"
+  }
+}

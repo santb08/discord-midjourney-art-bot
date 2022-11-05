@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+  }
+  div {
+    padding: 5px;
+  }
+  div.wrapper {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+      background: #bce9f7;
+      justify-content: center;
+      align-items: center;
+  }
+  div.outer-card {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-radius: 50px;
+    background: #ffffff;
+    padding: 30px;
+  }
+  div.inner-card {
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #b7c5c9;
+    border-radius: 50px;
+    background: #dcf1f7;
+    padding: 70px;
+  }
+  div.task {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #b7c5c9;
+    padding: 10px;
+    text-align: center;
+  }
+  div.progress{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: #008CBA;
+    display: none;
+  }
+  p.progress{
+    font-family: Verdana;
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    color: #b7c5c9;
+    display: none;
+  }
+  h1 {
+      font-family: Verdana;
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding-left: 200px;
+      padding-right: 200px;
+      text-align: center;
+  }
+  label {
+    padding-right: 10px;
+  }
+  input[type=submit]{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover{
+    background-color: red;
+  }
+  input[type=text] {
+    width: 80%;
+    padding: 6px 10px;
+    margin: 4px 2px;
+    box-sizing: border-box;
+  }
+  select {
+    width: 50%;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+  }
+  a:link, a:visited {
+    background-color: #008CBA;
+    color: white;
+    padding: 14px 25px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a:hover, a:active {
+    background-color: red;
+  }
+  button{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: red;
+  }
