@@ -31,3 +31,17 @@ DRIVE_FOLDER_ID = '<DRIVE FOLDER ID>' # // id of the folder, service account sho
 
 # Runtime
 1. Run `npm start` command to start the server.
+
+# Deploy with Docker
+1. Build Docker Image using the following command:
+
+```sh
+docker build -t mj-self-bot .
+```
+
+2. Run Docker Image Container with:
+```sh
+docker run -it -p 8000:3000 mj-self-bot
+```
+
+This can be useful in a future for deployments in different environments:)

@@ -1,6 +1,6 @@
 const { v4: uuid } = require('uuid');
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const creds = require("../creds.json");
+const creds = require("../../creds.json");
 
 const getRows = async (doc_id) => {
   const rowsArray = [];
