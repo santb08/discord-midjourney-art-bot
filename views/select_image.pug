@@ -16,8 +16,8 @@ html
               p=`Command: ${image.command}`
               img(src=image.url)
               div
-                a(href=`/task/image/select?id=${i}&image=1`) Image 1
-                a(href=`/task/image/select?id=${i}&image=2`) Image 2
-                a(href=`/task/image/select?id=${i}&image=3`) Image 3
-                a(href=`/task/image/select?id=${i}&image=4`) Image 4
+                a(href=`/task/image/select?id=${image.commandId}&image=0`) Image 1
+                a(href=`/task/image/select?id=${image.commandId}&image=1`) Image 2
+                a(href=`/task/image/select?id=${image.commandId}&image=2`) Image 3
+                a(href=`/task/image/select?id=${image.commandId}&image=3`) Image 4
             div

@@ -33,5 +33,8 @@ html
               div.task
                 each el, i in element.commands
                   input(type="text", name="command", value=el.command, id=id)
+                  if el.selectedImage
+                    //- a(href=el.selectedImage) #{el.selectedImage}
+                    iframe(src=el.selectedImage+"/preview" width="640" height="480" allow="autoplay")
                 input(type="hidden", name="id", value=id)
             input( type = 'submit', value = 'Save')

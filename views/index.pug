@@ -27,8 +27,8 @@ html
               div
                 label Select image type:
                 select(name="type", id="type")
-                  option(value="Random Upscaled image") Random Upscaled image
                   option(value="Selected image") Selected image
+                  option(value="Random Upscaled image") Random Upscaled image
                   option(value="The third image") The third image
                   option(value="Random Max Upscaled image") Random Max Upscaled image
               div
@@ -47,7 +47,7 @@ html
             div.task
               p=`Number of commands in task: ${task.commands.length}`
               p=`Task type: ${task.type}`
-              a(href=`/task/run?id=${i}` onclick='test()') Run
-              a(href=`/task/open?id=${i}`) Edit
-              a(href=`/task/delete?id=${i}`) Delete
+              a(href=`/task/run?id=${task.id}` onclick='test()') Run
+              a(href=`/task/open?id=${task.id}`) Edit
+              a(href=`/task/delete?id=${task.id}`) Delete
             div
