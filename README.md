@@ -1,3 +1,8 @@
+# Requirements
+- Node v16.15.x
+- Discord Selfbot Credentials
+- Google API Service Account Credentials
+
 # Project setup
 1. Install node js from https://nodejs.org/en/download/ for your platform
 2. Unzip project folder. Open terminal/console. Run ‘npm install’ command.
@@ -45,3 +50,6 @@ docker run -it -p 8000:3000 mj-self-bot
 ```
 
 This can be useful in a future for deployments in different environments:)
+
+# Collaborators
+[Santb](https://github.com/tortutales) Any issue or any support needed feel free to contact me on any channel.
