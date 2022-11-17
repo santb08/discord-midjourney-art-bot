@@ -1,4 +1,3 @@
-const { v4: uuid } = require('uuid');
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const creds = require("../../creds.json");
 
@@ -13,16 +12,12 @@ const getRows = async (doc_id) => {
 
   console.log('[Rows]', rows.length)
   for (i = 0; i < rows.length; i++) {
-    const id = uuid();
     const row = {
-      id,
+      id: rows[i].Id,
       command: rows[i].Command,
       tag: rows[i].Tag,
     };
     rowsArray.push(row);
-
-    rows[i].Id = id;
-    rows[i].save();
   }
 
   console.log(rowsArray);
