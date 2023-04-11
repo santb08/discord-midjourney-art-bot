@@ -1,19 +1,17 @@
+// @constants
+const BOT_ID = '936929561302675456';
+const BOT_COMMAND = 'imagine';
+
+// @env
 const {
-  CLIENT_TOKEN,
-  BOT_CHANNEL,
-
-  // PLEASE DON'T TOUCH
-  BOT_COMMAND,
-  BOT_ID,
-
-  // GOOGLE API SETUP
-  DRIVE_FOLDER_ID,
+  DISCORD_TOKEN,
+  DISCORD_CHANNEL_ID,
 } = process.env;
 
 module.exports = {
   BOT_ID,
   BOT_COMMAND,
-  BOT_CHANNEL,
-  CLIENT_TOKEN,
-  DRIVE_FOLDER_ID,
+  DISCORD_CHANNEL_ID,
+  DISCORD_TOKEN,
+  BOT_ID,
 };

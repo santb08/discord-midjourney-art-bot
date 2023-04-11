@@ -10,17 +10,7 @@ const {
   upscaleImageController,
 } = require("../controllers/tasks");
 
-router.post("/task/create", createTasksController);
 router.get("/task/delete", deleteTaskController);
-router.get("/task/open", async (req, res) => {
-  try {
-    const { id } = req.query;
-    const element = await getTask(id)
-    res.render("edit", { element, id });
-  } catch (error) {
-    res.render("error", { error });
-  }
-});
 
 router.post("/task/edit", editTaskController);
 router.get("/task/run", runTask);

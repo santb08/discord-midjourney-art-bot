@@ -12,7 +12,7 @@ Create a `.env` file in the project root, here we'll add all our credentials nee
 
 ```sh
 CLIENT_TOKEN = '<DISCORD BOT TOKEN>' # //user auth token for the self bot
-BOT_CHANNEL = '<DISCORD CHANNEL ID>' # // channel to send the messages
+DISCORD_CHANNEL_ID = '<DISCORD CHANNEL ID>' # // channel to send the messages
 
 # PLEASE DON'T TOUCH
 BOT_COMMAND = 'imagine' # imagine command for the bot
@@ -24,7 +24,7 @@ DRIVE_FOLDER_ID = '<DRIVE FOLDER ID>' # // id of the folder, service account sho
 
 # Discord part
 1. Assign your user token to CLIENT_TOKEN variable from /utils/variables.js file. (https://www.androidauthority.com/get-discord-token-3149920/)
-2. Assign channel id with the bot (it can be DM or channel on your own server) to BOT_CHANNEL variable from /utils/variables.js file. (The last part of any web link, like https://discord.com/channels/@me/101463260890005xxxx). 101463260890005xxxx - channel id.
+2. Assign channel id with the bot (it can be DM or channel on your own server) to DISCORD_CHANNEL_ID variable from /utils/variables.js file. (The last part of any web link, like https://discord.com/channels/@me/101463260890005xxxx). 101463260890005xxxx - channel id.
 
 # Google Drive part
 1. Create Google API project.

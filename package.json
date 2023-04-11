@@ -1,15 +1,14 @@
 {
   "name": "discord-bot",
-  "version": "1.0.0",
-  "description": "A self-bot that interacts with Midjourney Bot via Discord",
+  "version": "0.0.1",
+  "description": "A self-bot that interacts with MidJourney Bot via Discord",
   "main": "src/bin/www",
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "scripts": {
     "start": "node src/bin/www",
-    "dev": "nodemon bin/www",
-    "forever": "forever src/bin/www"
+    "dev": "nodemon bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -18,20 +17,17 @@
     "body-parser": "1.20.0",
     "csv-parser": "3.0.0",
     "csv-writer": "1.6.0",
-    "discord.js-selfbot-v13": "2.6.12",
+    "discord.js-selfbot-v13": "v2.13",
     "dotenv": "16.0.3",
     "express": "4.18.1",
     "google-spreadsheet": "3.3.0",
     "googleapis": "107.0.0",
-    "got": "11.8.3",
+    "got": "^11.8.6",
     "moment": "2.29.4",
     "node-persist": "3.1.0",
-    "pug": "3.0.2",
-    "request": "2.88.2",
-    "uuid": "9.0.0"
+    "request": "2.88.2"
   },
   "devDependencies": {
-    "forever": "^4.0.3",
     "nodemon": "2.0.20"
   }
 }

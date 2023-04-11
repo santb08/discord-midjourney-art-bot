@@ -1,9 +1,7 @@
 const fs = require('fs');
 const tasks = JSON.parse(fs.readFileSync('tasks.json'));
-// const pendingImages = JSON.parse(fs.readFileSync('pending_images.json'));
 const pendingUpscales = JSON.parse(fs.readFileSync('pending_upscales.json'));
 
-// console.log('[Tasks]', tasks);
 const createTask = (task) => {
   tasks.unshift(task);
   fs.writeFile("tasks.json", JSON.stringify(tasks), (err) => {
@@ -21,9 +19,7 @@ const addPendingImage = (image) => {
 
 module.exports = {
   tasks,
-  // pendingImages,
   pendingUpscales,
   createTask,
   addPendingImage,
-  // addPendingUpscale,
 };

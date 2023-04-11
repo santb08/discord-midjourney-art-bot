@@ -5,11 +5,10 @@ const upload = require("./utils/upload_image");
 const {
   BOT_ID,
   BOT_COMMAND,
-  BOT_CHANNEL,
-  CLIENT_TOKEN,
+  DISCORD_CHANNEL_ID,
+  DISCORD_TOKEN,
 } = require("./utils/variables");
 const { updateTask, updateCommand } = require("./core/tasks");
-const client = new Client({ checkUpdate: false });
 
 const extractKey = async (extractor) => {
   for (const key of extractor) {
@@ -52,9 +51,9 @@ const getUpscalingButtons = (message) => {
   return options;
 };
 
-const botFullFlow = async (task, option, res) => {
+const botFullFlow = async (task, option, _) => {
   let lastMessage;
-  const channel = client.channels.cache.get(BOT_CHANNEL);
+  const channel = client.channels.cache.get(DISCORD_CHANNEL_ID);
   console.log("[Commands]", task.commands);
   console.log("[Option]", option);
 
@@ -116,7 +115,7 @@ const botFullFlow = async (task, option, res) => {
 };
 
 const botSelectedImage = async (task) => {
-  const channel = client.channels.cache.get(BOT_CHANNEL);
+  const channel = client.channels.cache.get(DISCORD_CHANNEL_ID);
 
   for (command of task.commands) {
     console.log('[Imagine]', command);
@@ -146,7 +145,7 @@ const botSelectedImage = async (task) => {
 
 const botSelectImage = async (messageId, selectedOption) => {
   console.log('[Selecting Image]', messageId, selectedOption);
-  const channel = client.channels.cache.get(BOT_CHANNEL);
+  const channel = client.channels.cache.get(DISCORD_CHANNEL_ID);
 
   const message = await channel.messages.fetch(messageId);
   const options = getUpscalingButtons(message);
@@ -168,7 +167,7 @@ const botSelectImage = async (messageId, selectedOption) => {
 }
 
 const botDownloadImage = async (image, res) => {
-  const channel = client.channels.cache.get(BOT_CHANNEL);
+  const channel = client.channels.cache.get(DISCORD_CHANNEL_ID);
 
   const imageMessage = await channel.messages.fetch(image.messageId);
   const options = getUpscalingButtons(imageMessage);
@@ -192,11 +191,6 @@ const botDownloadImage = async (image, res) => {
     selectedImage: imageUrl,
   });
 };
-
-client.login(CLIENT_TOKEN);
-client.on("ready", async () => {
-  console.log('[Logged In]')
-});
 
 module.exports = {
   botFullFlow,

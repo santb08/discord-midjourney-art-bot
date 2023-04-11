@@ -1,44 +1,6 @@
-const { v1: uuid } = require('uuid');
-const { botSelectedImage, botFullFlow, botSelectImage, botDownloadImage } = require('../bot');
+const { botSelectImage, botDownloadImage } = require('../bot');
 const { getTask, createTask, deleteTask, getPendingImages, updateCommand, getPendingUpscales, updateTask } = require('../core/tasks');
 const { TASK_TYPES } = require('../utils/constants');
-const { getRows } = require('../utils/process_google');
-
-const createTasksController = async (req, res) => {
-  try {
-    const {
-      link_id,
-      link_id_auto,
-      type
-    } = req.body;
-
-    const link = link_id || link_id_auto;
-    console.log('[Google Sheet Link]', link);
-    const docRows = await getRows(link);
-    const new_task = {
-      id: uuid(),
-      type,
-      commands: [],
-    };
-
-    docRows.forEach((element, i) => {
-      new_task.commands[i] = {
-        command: element.command,
-        id: element.id,
-      }
-      // new_task.prefixes[i] = element.id
-      // new_task.suffixes[i] = element.tag
-    });
-
-    createTask(new_task);
-    res.redirect('/');
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send({
-      message: 'Something happened, please try again'
-    });
-  }
-};
 
 const selectImageController = async (req, res) => {
   try {
@@ -71,27 +33,6 @@ const selectImageController = async (req, res) => {
 const runTask = async (req, res) => {
   try {
     const { id } = req.query;
-    console.log('[Searching Task]', id);
-    const task = await getTask(id);
-
-    switch (task.type) {
-      case TASK_TYPES.RANDOM_UPSCALED:
-        await botFullFlow(task, "random", res);
-        break;
-      case TASK_TYPES.THIRD_IMAGE:
-        await botFullFlow(task, "third", res);
-        break;
-      case TASK_TYPES.RANDOM_UPSCALED_MAX:
-        await botFullFlow(task, "random_max", res);
-        break;
-      case TASK_TYPES.SELECTED_IMAGE:
-        await botSelectedImage(task, res);
-        break;
-      default:
-        throw new Error('No valid type');
-    }
-
-    res.render("success");
   } catch (error) {
     res.render("error", { error });
   }
@@ -137,7 +78,6 @@ const editTaskController = async (req, res) => {
 }
 
 module.exports = {
-  createTasksController,
   selectImageController,
   runTask,
   deleteTaskController,
